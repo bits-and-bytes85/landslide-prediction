@@ -1,0 +1,40 @@
+% https://www.mathworks.com/help/deeplearning/ref/cascadeforwardnet.html
+
+% For a complete list of the training parameters for the default training
+% function for this model, check the page below:
+% https://www.mathworks.com/help/releases/R2024b/deeplearning/ref/trainlm.html
+
+features = load('sampled_features.mat');
+labels = load('sampled_labels.mat');
+
+data_matrix = [ features labels ];
+
+% 1-by-94 matrix x contains the input values and 1-by-94 matrix t contains the associated target output values
+[x,t] = simplefit_dataset;
+
+
+num_layers = 40;
+net = cascadeforwardnet(num_layers, 'trainlm'); 
+
+% training parameters
+net.trainParam
+
+net.trainParam.epochs = 15;  % default=1000 
+net.trainParam.mc = 0.1;
+net.trainParam.lr = 0.01; % default: 0.01
+% net.trainParam.min_grad;     % default: 1e-5
+% net.trainparam.mu;           % default: 1e-3 
+% net. trainParam.mu_dec       % default: 0.1
+% net.trainparam.mu_inc        % default: 10
+% net.trainParam.mu_max        % default: 1e10
+
+net = train(net,x,t);
+% view(net)
+
+outputs = net(x);
+
+% performance of the neural network
+performance = perform(net, x, outputs);
+disp(['Performance: ', num2str(performance)]);
+
+outputs
