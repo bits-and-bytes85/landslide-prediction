@@ -13,5 +13,5 @@ We extracted our data from Mus, Turkey using ArcGIS and its Gradient Metrics too
 ## 🌐 Model:
 A cascade-forward neural network (CFNN) is a type of feed-forward neural network that has direct connections from the input layer and every previous layer to the following layers. We decided to use cascade-forward neural networks and feed forward networks because of their ability to identify non-linear relationships between features, which is especially important for our goal.
 
-## 🌐 Learn about our Process: 
+## 📝 Learn about our Process: 
 https://docs.google.com/presentation/d/1Kmae23Ln0e6tHmd_ZEhIppsdDnLLcLShhqx0sN2E5i4/edit?usp=sharing
