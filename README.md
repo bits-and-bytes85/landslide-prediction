@@ -14,3 +14,5 @@ A cascade-forward neural network (CFNN) is a type of feed-forward neural network
 
 ## 📝 Learn about our Process: 
 https://docs.google.com/presentation/d/1Kmae23Ln0e6tHmd_ZEhIppsdDnLLcLShhqx0sN2E5i4/edit?usp=sharing
+
+## This project was a part of the Mathworks Challenge Projects Program. 
